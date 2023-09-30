@@ -1,0 +1,24 @@
+.banner {
+	width: 100%;
+	min-width: 568px;
+	content: "";
+	background-image: url(/public/Banner.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 568px;
+	z-index: -1;
+}
+
+/* .big-star {
+	background-image: url(/big-star.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: absolute;
+	height: 40px;
+	width: 40px;
+} */
