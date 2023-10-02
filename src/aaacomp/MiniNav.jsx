@@ -3,7 +3,6 @@ import "./aaaCompStatic/mininav.css";
 const scrollToSection = (e, id) => {
 	e.preventDefault();
 	const element = document.getElementById(id);
-	console.log(id);
 	if (element) {
 		element.scrollIntoView({
 			behavior: "smooth",
@@ -17,17 +16,19 @@ function MiniNav() {
 		<nav>
 			<div className='mini-nav w-75'>
 				<div className='text-wrapper-2'>
-					<a href='' onClick={(e) => scrollToSection(e, "our-services")}>
+					<a href='' onClick={(e) => scrollToSection(e, "curated-services")}>
 						Curated Custom Service
 					</a>
 				</div>
 				<div className='text-wrapper-2'>
-					<a href='' onClick={(e) => scrollToSection(e, "curated-services")}>
+					<a href='' onClick={(e) => scrollToSection(e, "how-it-works")}>
 						How Car Service Works?
 					</a>
 				</div>
 				<div className='text-wrapper-2'>
-					<a href='#'>Rating &amp; Reviews</a>
+					<a href='' onClick={(e) => scrollToSection(e, "reviews")}>
+						Rating &amp; Reviews
+					</a>
 				</div>
 				<div className='text-wrapper-2'>
 					<a href='#'>Price List</a>

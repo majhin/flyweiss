@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Banner from "../aaacomp/Banner";
 import MiniNav from "../aaacomp/MiniNav";
 import OurServices from "../aaacomp/OurServices";
@@ -5,11 +7,12 @@ import Poster from "../aaacomp/Poster";
 import CustomCuratedComponents from "../aaacomp/CustomCuratedComponents";
 import ChooseCar from "../aaacomp/ChooseCar";
 import ReviewsComponent from "../aaacomp/ReviewComponent";
-import Footer from "../aaacomp/Footer";
+import BookYourCar from "../aaacomp/BookYourCar";
 
 function Home() {
 	return (
 		<>
+			<BookYourCar />
 			<Banner />
 			<MiniNav />
 			<OurServices />
@@ -17,7 +20,6 @@ function Home() {
 			<CustomCuratedComponents />
 			<ChooseCar />
 			<ReviewsComponent />
-			<Footer />
 		</>
 	);
 }

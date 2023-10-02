@@ -1,0 +1,11 @@
+.sidebar-container {
+	position: fixed;
+	top: 0;
+	right: 0; /* Initially outside the viewport */
+	height: 100vh;
+	width: 0px;
+	background-color: white;
+	transition: width 0.5s ease-in-out; /* Smooth transition with 0.3s duration and ease timing function */
+	z-index: 1000; /* Ensure it appears above other elements */
+	padding: 0px;
+}

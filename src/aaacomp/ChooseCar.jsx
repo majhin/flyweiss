@@ -24,7 +24,7 @@ function ChooseCar() {
 					</div>
 				</div>
 			</section>
-			<section className='ms-3 mt-5'>
+			<section id='how-it-works' className='ms-3 mt-5'>
 				<img
 					src='/how-car-service-works.svg'
 					alt='how-car-service-works'

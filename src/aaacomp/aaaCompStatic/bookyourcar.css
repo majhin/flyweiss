@@ -54,6 +54,7 @@
 	position: absolute;
 	top: 0;
 	left: 77px;
+	background-color: white;
 }
 
 .component .star {
@@ -62,7 +63,7 @@
 	height: 22.61px;
 }
 
-.component .text-wrapper-2 {
+.component .star-wrapper-2 {
 	position: relative;
 	width: fit-content;
 	margin-top: -1px;

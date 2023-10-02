@@ -1,0 +1,51 @@
+.popular-articles .card {
+	margin-right: 10px; /* Add a horizontal gap between the cards */
+	width: calc(
+		50% - 10px
+	); /* Set initial width to 50% minus the horizontal gap */
+	float: left; /* Float the cards to allow them to sit beside each other */
+	clear: both; /* Clear the float after every 2 cards to start a new row */
+}
+
+.sidebar .card {
+	margin-bottom: 10px; /* Add vertical gap between the cards */
+}
+
+/* Styles for the main container */
+.container {
+	padding-top: 50px; /* Adjust the top padding as needed */
+}
+
+/* Styles for individual blog cards */
+.card {
+	border: none; /* Remove border from cards */
+}
+
+.card-title {
+	font-size: 1.5rem; /* Adjust the title font size */
+}
+
+.card-text {
+	font-size: 1rem; /* Adjust the description font size */
+}
+
+/* Styles for the sidebar */
+.sidebar-card {
+	margin-top: 20px; /* Adjust the top margin for the sidebar card */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+	.sidebar .card {
+		width: 100%; /* Set width to 100% on smaller screens to expand the cards */
+	}
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+	.popular-articles .card {
+		width: 100%; /* Set width to 100% on smaller screens to stack the cards vertically */
+		margin-right: 0; /* Remove the horizontal gap */
+		margin-bottom: 10px; /* Add vertical gap between the cards */
+	}
+}

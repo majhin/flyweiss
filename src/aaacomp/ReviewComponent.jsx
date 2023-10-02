@@ -76,7 +76,7 @@ const ReviewComponent = () => {
 	};
 
 	return (
-		<section className='w-50 ms-3 mt-lg-4 '>
+		<section id='reviews' className='w-50 ms-3 mt-lg-4 '>
 			<h4 className='m-3 ms-4 fw-bold '>What Car Owners in Hyderabad Say</h4>
 
 			<div style={containerStyle}>

@@ -14,7 +14,7 @@ function BookYourCar() {
 				<div className='div'>Rating</div>
 				<div className='frame'>
 					<img className='star' src='/star.svg' />
-					<div className='text-wrapper-2'>4.7 / 5</div>
+					<div className='star-wrapper-2'>4.7 / 5</div>
 				</div>
 			</div>
 			<div className='frame-wrapper'>

@@ -43,7 +43,7 @@ function CustomCuratedComponents() {
 				</div>
 
 				<div className='m-3'>
-					<img src='/detailing.svg' alt='Car Detailing' />
+					<img src='/detaining.svg' alt='Car Detailing' />
 					<p className='text-center'>Car Detailing</p>
 				</div>
 
