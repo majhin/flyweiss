@@ -37,7 +37,12 @@ function Login() {
 			const data = await response.json();
 			if (response.ok) {
 				console.log(data);
-				setCurrentStatus(data.otp);
+
+				if (registerOrLogin === "register") {
+					setCurrentStatus(data.user.otp);
+				} else {
+					setCurrentStatus(data.otp);
+				}
 				setIsOtpSent(true);
 			} else {
 				console.log(data);
