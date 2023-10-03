@@ -34,19 +34,13 @@ function Login() {
 					}),
 				}
 			);
-			console.log(
-				JSON.stringify({
-					mobileNumber: mobileNumber,
-				})
-			);
-
+			const data = await response.json();
 			if (response.ok) {
-				const data = await response.json();
+				console.log(data);
 				setCurrentStatus(data.otp);
 				setIsOtpSent(true);
 			} else {
-				// Handle error response here (e.g., show error message to user)
-				const data = await response.json();
+				console.log(data);
 				setCurrentStatus(data.error);
 				setRegisterOrLogin("");
 			}
@@ -73,14 +67,14 @@ function Login() {
 					otp: otp,
 				}),
 			});
-
+			const data = await response.json();
 			if (response.ok) {
-				const data = await response.json();
+				console.log(data);
 				handleCloseClick();
 
 				navigate("/logged-in");
 			} else {
-				const data = await response.json();
+				console.log(data);
 				setCurrentStatus(data.error);
 			}
 		} catch (error) {
