@@ -2,7 +2,7 @@
 	width: 100%;
 	min-width: 568px;
 	content: "";
-	background-image: url(/public/Banner.svg);
+	background-image: url(/public/Banner.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
