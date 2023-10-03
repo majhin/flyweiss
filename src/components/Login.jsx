@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../static/loginbar.css";
 
 function Login() {
-	const navigate = useNavigate;
+	const navigate = useNavigate();
 	const [mobileNumber, setMobileNumber] = useState("");
 	const [otp, setOtp] = useState("");
 	const [currentStatus, setCurrentStatus] = useState("Login");
@@ -15,6 +15,9 @@ function Login() {
 		loginSidebar.style.width = "0px";
 		loginSidebar.style.padding = "0px";
 		setIsOtpSent(false);
+		setRegisterOrLogin("");
+		setCurrentStatus("Login");
+		setOtp("");
 	};
 
 	const handleRegisterAndLogin = async () => {
@@ -23,6 +26,9 @@ function Login() {
 				`https://kv-varlu.vercel.app/api/v1/${registerOrLogin}`,
 				{
 					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
 					body: JSON.stringify({
 						mobileNumber: mobileNumber,
 					}),
@@ -36,13 +42,12 @@ function Login() {
 
 			if (response.ok) {
 				const data = await response.json();
+				setCurrentStatus(data.otp);
 				setIsOtpSent(true);
-				console.log(data);
 			} else {
 				// Handle error response here (e.g., show error message to user)
 				const data = await response.json();
 				setCurrentStatus(data.error);
-				console.error(data);
 				setRegisterOrLogin("");
 			}
 		} catch (error) {
@@ -71,12 +76,12 @@ function Login() {
 
 			if (response.ok) {
 				const data = await response.json();
+				handleCloseClick();
+
 				navigate("/logged-in");
-				console.log(data); // Log the response data from the server
 			} else {
 				const data = await response.json();
 				setCurrentStatus(data.error);
-				console.error(data);
 			}
 		} catch (error) {
 			console.error("Error occurred while verifying OTP:", error);
@@ -105,7 +110,7 @@ function Login() {
 			</div>
 			<div className='text-center'>
 				<h5 style={{ color: "#3f7ccd", fontWeight: "bold" }}>
-					{isOtpSent ? "OTP has been sent" : currentStatus}
+					{isOtpSent ? currentStatus : "Login or Register"}
 				</h5>
 			</div>
 			<div
@@ -153,13 +158,13 @@ function Login() {
 						backgroundColor: "#3f7ccd",
 						width: "100%",
 					}}
-					onClick={() => {
-						if (isOtpSent) {
-							handleVerifyOtp();
-						} else {
-							setRegisterOrLogin("login");
-						}
-					}}
+					onClick={
+						isOtpSent
+							? handleVerifyOtp
+							: () => {
+									setRegisterOrLogin("login");
+							  }
+					}
 				>
 					{isOtpSent ? "Verify OTP" : "Login"}
 				</button>
